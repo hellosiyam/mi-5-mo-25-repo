@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Secrit</title>
+</head>
+<body>
+    <h1 id="title">My Secrit Info</h1>
+    <input id="input" title="input" type="text" placeholder="Pleas type delete">
+    <button id="delete" disabled>Delete</button>
+    <script>
+        document.getElementById('input').addEventListener('keyup', function (event) {
+            const key = event.target.value;
+            const enableBtn = document.getElementById('delete')
+            if (key === 'delete') {
+                enableBtn.removeAttribute('disabled');
+            }
+            else{
+                enableBtn.setAttribute('disabled', true)
+            }
+        })
+        document.getElementById('delete').addEventListener('click', function () {
+            const tittle = document.getElementById('title');
+            tittle.style.display = 'none'
+        })
+    </script>
+</body>
+</html>

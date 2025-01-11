@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse events</title>
+</head>
+<body>
+    <h1>Mouse Event </h1>
+    <input title="input" type="text" id="input">
+    <button id="click">Mouse Click</button>
+
+
+    <script>
+        document.getElementById('input').addEventListener('keyup', function () {
+            console.log(event.target.value);  
+        })
+
+        // document.getElementById('input').addEventListener('keydown', function () {
+        //     console.log(event.target.value);  
+        // })
+        
+        // document.getElementById('input').addEventListener('keypress', function (){
+        //     console.log(event.target.value);
+        // })
+
+        document.getElementById('input').addEventListener('focus', function () {
+            console.log('Mouse focus'); 
+        })
+
+        document.getElementById('input').addEventListener('blur', function () {
+            console.log('mouse left'); 
+        })
+
+        // document.getElementById('click').addEventListener('mouseenter', function({
+        //     console.log('Click Button');
+        // })
+
+        // document.getElementById('click').addEventListener('mouseleave', function({
+        //     console.log('Click Button');
+        // })
+
+        // document.getElementById('click').addEventListener('mousemove',function (){
+        //     console.log('Click Button');
+        // })
+
+        document.getElementById('click').addEventListener('click', function () {
+            console.log('click Button'); 
+        })
+        
+    </script>
+</body>
+</html>
