@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comment-Box</title>
+</head>
+<body>
+    <h1>Plras Enter Your Comment</h1>
+    <div id="coment-area">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe, numquam velit obcaecati aliquid voluptate incidunt fugiat quis? Maxime, nam voluptas.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat voluptatum commodi reprehenderit deleniti alias fuga?</p>
+    </div>
+    <textarea title="textarea" name="" id="textarea" cols="30" rows="4"></textarea><br>
+    <button id="submit">Submit Your Comment</button>
+
+    <script>
+        document.getElementById('submit').addEventListener('click', function () {
+            const input = document.getElementById('textarea');
+            const textarea = input.value;
+
+            const commentArea = document.getElementById('coment-area');
+            const p = document.createElement('p');
+            commentArea.appendChild(p);
+
+            p.innerText = textarea;
+            input.value = '';
+        })
+    </script>
+</body>
+</html>
