@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Explor Delegate</h1>
+    <section>
+        <ul id="ul-list">
+            <li class="list">Lorem, ipsum dolor.</li>
+            <li class="list">Dolores, tenetur voluptates!</li>
+            <li class="list">Quam, dolorum. Eum!</li>
+            <li class="list">Sequi, necessitatibus sint.</li>
+            <li class="list">Eos, voluptatum doloremque.</li>
+            <li class="list">Tempora, aspernatur pariatur.</li>
+        </ul>
+        <button id="button">Add new item</button>
+    </section>
+
+
+    <script>
+        // const lists = document.getElementsByClassName('list');
+        // for(const list of lists){
+        //     list.addEventListener('click', function(event) {
+        //      event.target.parentNode.removeChild(event.target)
+        //     })
+        // }
+        document.getElementById('ul-list').addEventListener('click', function (event) {
+            event.target.parentNode.removeChild(event.target)
+        })
+        document.getElementById('button').addEventListener('click', function () {
+                const uiContiner = document.getElementById('ul-list');
+
+                const newLi = document.createElement('li');
+                newLi.innerText = "Brend New Item Added";
+                newLi.classList.add('list')
+                uiContiner.appendChild(newLi);
+        })
+    </script>
+</body>
+</html>

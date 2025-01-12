@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <h1>Delegate </h1>
+        <ul id="ul-continer">
+            <li class="list">Lorem, ipsum dolor.</li>
+            <li class="list">Sunt, saepe voluptas.</li>
+            <li class="list">Labore, hic veritatis!</li>
+            <li class="list">Provident, unde vitae.</li>
+            <li class="list">Iure, non a.</li>
+            <li class="list">Ex, animi assumenda.</li>
+        </ul>
+        <button id="button">Add Another list</button>
+</section>
+    <script>
+        document.getElementById('ul-continer').addEventListener('click', function (event) {
+            event.target.remove(event.target)
+        })
+        document.getElementById('button').addEventListener('click', function () {
+            const ulContiner = document.getElementById('ul-continer');
+
+            const li = document.createElement('li');
+            li.innerText = "Add an Another List";
+            li.classList.add('list')
+            ulContiner.appendChild(li)
+        })
+    </script>
+</body>
+</html>
