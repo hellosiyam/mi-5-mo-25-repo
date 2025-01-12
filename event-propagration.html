@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event propagation</title>
+</head>
+<body id="body">
+    <h1>Event propagation </h1>
+    <section id="il-section"> 
+        <ul id="ul-list">
+            <li id="list-1">Lorem, ipsum.</li>
+            <li id="list-2">Eveniet, voluptas.</li>
+            <li id="list-3">Impedit, sapiente.</li>
+            <li id="list-4">Nulla, ad!</li>
+        </ul>
+    </section>
+
+    <script>
+        document.getElementById('list-2').addEventListener('click',function (event) {
+            console.log('Clicked list-2');
+            event.stopImmediatePropagation();
+        });
+        document.getElementById('list-2').addEventListener('click',function (event) {
+            console.log('Clicked second list-2');
+        });
+        document.getElementById('list-2').addEventListener('click',function (event) {
+            console.log('Clicked third list-2');
+        });
+        document.getElementById('list-2').addEventListener('click',function (event) {
+            console.log('Clicked fourth list-2');
+        });
+        document.getElementById('ul-list').addEventListener('click',function () {
+            console.log('Clicked ul-list');
+        });
+        document.getElementById('il-section').addEventListener('click',function () {
+            console.log('Clicked il-section');
+        });
+        document.getElementById('body').addEventListener('click',function () {
+            console.log('Clicked body');
+        });
+    </script>
+</body>
+</html>

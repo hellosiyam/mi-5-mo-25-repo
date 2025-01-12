@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="title">My secrit Status</h1>
+    <input id="input" type="text" title="input" placeholder="Please write confirm">
+    <button id="delete" disabled>Delete</button>
+
+    <script>
+        document.getElementById('input').addEventListener('keyup', function (event) {
+            const key = event.target.value;
+            const enebleBtn = document.getElementById('delete');
+            if(key === 'confirm'){
+                enebleBtn.removeAttribute('disabled');
+            }
+            else{
+                enebleBtn.setAttribute('disabled', true)
+            }
+        })
+        document.getElementById('delete').addEventListener('click', function () {
+            const tittle = document.getElementById('title');
+            tittle.style.display = 'none'
+        })
+    </script>
+</body>
+</html>
